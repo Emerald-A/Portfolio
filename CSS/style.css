@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+:root{
+     --bgColor: #000000;
+     --specialText: #CC3636;
+}
+
+body{
+     background: var(--bgColor);
+     padding: 0;
+     overflow-x: hidden;
+     overflow-y: hidden;
+     /* width: 100%; */
+}
+.navBar{
+     width: 100%;
+     padding: 0.5%;
+     min-height: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.navBar .toggle{
+     height: 5px;
+     width: 2%;
+     background-color: #fff;
+     border: 6px solid #fff;
+     display: none;
+}
+.navItems{
+     width: 60%;
+}
+.navBtn{
+     font-size: 11px;
+     font-family: 'Noto Sans', sans-serif;
+     font-weight: 500;
+     background: transparent;
+     border: none;
+     margin-right: 2.5%;
+     margin-left: 2.5%;
+     text-shadow: none;
+     color: white;
+}
+.navBtn:hover{
+     color: var(--specialText);
+}
+.main{
+     display: inline-flex;
+     height: 80% !important;
+     width: 80%;
+     padding: 5%;
+}
+.mainText{
+     height: 100%;
+     width: 50%;
+     border: 2px solid black;
+     color: white;
+     margin-top: 10%;
+     margin-left: 8%;
+     float: right;
+}
+.mainText h3{
+     font-size: 20px;
+     font-family: 'Noto Sans', sans-serif;
+     font-weight: 700;
+     letter-spacing: 3px; 
+}
+.mainText h1{
+     font-size: 70px;
+     font-family: 'Noto Sans', sans-serif;
+     font-weight: 700;
+     margin-top: 0;
+     margin-bottom: 0;
+     /* line-height: 50px; */
+}
+.mainText h1 span{
+     font-size: 30px;
+     font-family: 'Noto Sans', sans-serif;
+     font-weight: 700;
+     margin-top: 0;
+     /* line-height: 20px; */
+     color: var(--specialText);
+}
+.mainText span{
+     font-size: 15px;
+     font-family: 'Noto Sans', sans-serif;
+     font-weight: 400;
+     margin-top: 0;
+     /* line-height: 20px; */
+}
+.mainText button{
+     height: 30px;
+     font-size: 13px;
+     font-family: 'Noto Sans', sans-serif;
+     font-weight: 700;
+     margin-top: 10%;
+     border: none;
+     background: var(--specialText);
+     color: black;
+}
+.mainPic{
+     width: 50%;
+     display: relative;
+     float: left;
+     /* border: 3px solid white; */
+     height: auto;
+     /* background: url(../Images/edit.png); */
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position-x: -150px;
+     color: #ccc;
+     text-align: center;
+}
+.mainPic form{
+     background: var(--specialText);
+     width: 90%;
+     height: 100%;
+}
+.mainPic form input{
+     width: 50%;
+}
+.icons{
+     margin-left: 5%;
+     margin-bottom: 5%;
+}
+.icon{
+     width: 20px;
+     height: 20px;
+     margin-left: 1%;
+}
+
+@media (max-width:800px) {
+   
+     .navItems{
+          margin-top: 20px;
+            width: 100%;
+          padding: 0.5%;
+          min-height: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255,255,255,0.3);
+          display: none  ;
+     }
+    
+    .navBar .toggle{
+          display: block;
+          position:absolute;
+          top: 0;
+          right: auto;
+          left: auto;
+     }
+     .navItems.active{
+          display: flex;
+     }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Portofolio</title>
+     <link rel="stylesheet" href="CSS/style.css">
+</head>
+<script>
+let bgImage = ["/Assignment/Images/edit.png", "/Assignment/Images/picture1.png", "/Assignment/Images/picture2.png"];
+let index = 0;
+
+let bgImg = JSON.parse(localStorage.getItem("bgImg"))
+	if (bgImg != null) {
+		bgImage = bgImg
+	}
+window.addEventListener("load", ()=> {
+    
+        var size = bgImage.length
+        var x = Math.floor(size * Math.random())
+        document.getElementById('img').src = bgImage[x];
+
+    
+})
+// function randImg() {
+//     var size = bgImage.length
+//     var x = Math.floor(size * Math.random())
+//     document.getElementById('img').src = bgImage[x];
+// }
+
+// randImg()
+</script>
+<body>
+     <nav class="navBar">
+          <span class="toggle"> Menu</span>
+          <div class="navItems">
+               <span><button class="navBtn" style="color: #CC3636;">HOME</button></span>
+               <span><button class="navBtn">ABOUT</button></span>
+               <span><button class="navBtn">SERVICE</button></span>
+               <span><button class="navBtn">PORTOFOLIO</button></span>
+               <span><button class="navBtn">RESUME</button></span>
+               <span><button class="navBtn">BLOG</button></span>
+               <span><button class="navBtn">CONTACT</button></span>
+          </div>
+        
+     </nav>
+     <div class="main">
+          <div class="mainText">
+               <h3> &#9866; HELLO</h3>
+               <h1>I'm <span id="type">Jems Kemerun</span> </h1>
+               <span>This is Jems Kemerun; visual designer, photographer, web developer and creative director located in the united states, looking to woking around the globe.</span>
+               <br>
+               <br>
+               <button id="btn">DOWLOAD RESUME</button>
+          </div>
+          <div class="mainPic">
+               <img  id="img" alt="">
+          </div>
+     </div>
+     <div class="icons">
+          <span><img src="Images/instagram.svg" alt="" srcset="" class="icon"></span>
+          <span><img src="Images/snapchat.svg" alt="" srcset="" class="icon"></span>
+          <span><img src="Images/tiktok.svg" alt="" srcset="" class="icon"></span>
+          <span><img src="Images/twitter.svg" alt="" srcset="" class="icon"></span>
+          <span><img src="Images/vimeo.svg" alt="" srcset="" class="icon"></span>
+     </div>
+</body>
+</html>
+
+<script>
+     var x =  document.getElementById("type");
+        // var timing = null;
+     var arr = 
+        [
+          "Adegbite David",
+          "a Software Engineer",
+          "a problem solver"
+       ]
+     let curarr = []
+     let del = false
+     let i = 0
+     let y = 0
+           
+        function type() {
+            x.innerHTML = curarr.join("")
+          if (i < arr.length) {
+           
+            if (!del && y <= arr[i].length) {
+               curarr.push(arr[i][y])
+                y++
+                x.innerHTML = curarr.join("")
+            }
+           if (del && y <= arr[i].length) {
+               curarr.pop(arr[i][y])
+               y--
+               x.innerHTML = curarr.join("")
+           }
+            if (y == arr[i].length) {
+                del = true
+            }
+            if(del && y == 0){
+                curarr = []
+                del = false
+                i++
+                if(i == arr.length){
+                    i = 0
+                }
+            }
+           
+          }
+         
+          setTimeout(type, 200)
+        }
+        type()
+
+
+
+
+        var fom = document.querySelector(".mainPic")
+        var btn = document.getElementById("btn")
+       
+        btn.addEventListener("click", ()=>{
+        
+             fom.innerHTML = 
+             `<form id = "mainfom"> 
+               <h2> You Have to Sign Up To Download </h2>
+               <input type = "text" placeholder = "Username">
+               <input type = "text" placeholder = "Password">
+               <input type = "text" placeholder = "Confirm Password">
+               <input id = "fombtn" type = "button" value = "Confirm Password">
+               <p> Already have an account? Sign In </p>
+             </form>
+             `
+             document.getElementById("fombtn").addEventListener("click",()=>{
+               document.getElementById("mainfom").style.display="none"
+               fom.style.background.display = "block"
+               // fom.style.background =  "url('../Images/edit.png');"
+             })
+
+           
+        })
+
+        var tog = document.querySelector(".toggle")
+        var btns = document.querySelector(".navItems")
+
+        tog.addEventListener("click", ()=>{
+             btns.classList.toggle("active")
+        })
+
+
+</script>
